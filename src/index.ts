@@ -1,1 +1,0 @@
-export {ColrJS} from './lib/ColrJS'
