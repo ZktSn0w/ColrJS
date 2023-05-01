@@ -27,6 +27,16 @@ export default [
                 format: 'es',
                 sourcemap: true,
             },
+            /**
+             * The IIFE bundle is used for delivery via unpgk CDN and as the browser package file. It will work in any
+             * browser, even if it doesn't support ESM Modules, imports or exports.
+             */ {
+                file: pkg.unpkg,
+                format: 'iife',
+                sourcemap: true,
+                plugins: [terser()],
+                name: 'ColrJS',
+            },
         ],
     }),
     bundle({

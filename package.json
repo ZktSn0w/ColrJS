@@ -53,5 +53,6 @@
   "version": "1.0.0",
   "description": "A modular tool to extract Color Palettes out of an Images Pixelarray",
   "author": "Dominik Strangas",
-  "private": false
+  "private": false,
+  "unpkg": "./dist/index.browser.min.js"
 }
