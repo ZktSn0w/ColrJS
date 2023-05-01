@@ -1,6 +1,9 @@
 /** @format */
 
-export const rgbToHsl = (rgb: [number, number, number]): [number, number, number] => {
+import { RGB } from '../../types';
+import { HSB } from '../../types/HSB';
+
+export const rgbToHsl = (rgb: RGB): HSB => {
     const r = rgb[0] / 255;
     const g = rgb[1] / 255;
     const b = rgb[2] / 255;

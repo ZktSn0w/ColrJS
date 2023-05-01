@@ -1,6 +1,6 @@
 /** @format */
 
+export type { ColrInit } from './ColrInit';
+export type { RGB } from './RGB';
 export type { HSB } from './HSB';
-export type { RGBa } from './RGBa';
-export type { Palette } from './Palette';
-export type { ColrjsInit } from './ColrjsInit';
+export type { Extractor } from './Extractor';
