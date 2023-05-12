@@ -16,11 +16,19 @@ export class Monochromatic extends Processor {
         return 'Monochromatic';
     }
 
-    private toMonochromatic(color: HSB): HSB {
+    private toMonochromatic(color: HSB): HSB[] {
         const [hue, saturation, lightness] = color;
+        let palette: HSB[] = [];
         const maxStepSize = Math.min(lightness, 100 - lightness, saturation, 100 - saturation) / 2;
+        for (let i = -2; i < 3; i++) {
+            let new_lightness = lightness + i * maxStepSize;
+            new_lightness = Math.round(Math.max(0, Math.min(100, new_lightness)));
 
-        return [hue, saturation, lightness];
+            let new_saturation = saturation + i * maxStepSize;
+            new_saturation = Math.round(Math.max(0, Math.min(100, new_saturation)));
+            palette.push([hue, new_saturation, new_lightness]);
+        }
+        return palette;
     }
 
     process(pixelArray: RGB[]): Palette {
@@ -30,32 +38,15 @@ export class Monochromatic extends Processor {
         // of a length equal to the number of swatches passed to the constructor
         const rgbPalette: RGB[] = [...sortedKClusters].map((rgbArray) => {
             return [
-                average(rgbArray.map((pixel) => pixel[0])),
-                average(rgbArray.map((pixel) => pixel[1])),
-                average(rgbArray.map((pixel) => pixel[2])),
+                Math.round(average(rgbArray.map((pixel) => pixel[0]))),
+                Math.round(average(rgbArray.map((pixel) => pixel[1]))),
+                Math.round(average(rgbArray.map((pixel) => pixel[2]))),
             ];
         });
 
         // convert to hsb to simplify monochromatic processing
-        const hsbPalette = [...rgbPalette].map((color) => rgbToHsl(color));
-        const monochromaticPalette = hsbPalette.map(this.toMonochromatic);
-        const parsedColors = hsbPalette.map((colorArray) => {
-            let [hue, saturation, lightness] = colorArray;
-            let monochromaticColorArray = [];
-            let max_step_size = Math.min(lightness, 100 - lightness, saturation, 100 - saturation) / 2;
-
-            for (let i = -2; i < 3; i++) {
-                let new_lightness = lightness + i * max_step_size;
-                new_lightness = Math.max(0, Math.min(100, new_lightness));
-
-                let new_saturation = saturation + i * max_step_size;
-                new_saturation = Math.max(0, Math.min(100, new_saturation));
-
-                monochromaticColorArray.push([hue, new_saturation, new_lightness]);
-            }
-
-            return monochromaticColorArray;
-        });
+        const [hsbPalette] = [...rgbPalette].map((color) => rgbToHsl(color));
+        const monochromaticPalette = this.toMonochromatic(hsbPalette);
 
         return new Palette(
             this.name,
