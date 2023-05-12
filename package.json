@@ -49,12 +49,10 @@
       "--experimental-specifier-resolution=node"
     ]
   },
-  "name": "colrjs2",
+  "name": "colrjs",
   "version": "1.0.0",
   "description": "A modular tool to extract Color Palettes out of an Images Pixelarray",
   "author": "Dominik Strangas",
   "private": false,
-  "dependencies": {
-    "rgb-to-hsl": "^0.0.3"
-  }
+  "unpkg": "./dist/index.browser.min.js"
 }

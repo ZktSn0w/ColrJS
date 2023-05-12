@@ -17,7 +17,7 @@ After installing the necessary tools, you can run the commands below to start de
 
 ## Development - Setting Up The Repository
 
--   clone the repository by running `git clone {{ repository.url }}` in your terminal or shell to clone the repo into the current directory.
+-   clone the repository by running `git clone https://github.com/ZktSn0w/ColrJS .` in your terminal or shell to clone the repo into the current directory.
 -   run `yarn` or `yarn install` to install the dependencies.
 -   run `yarn setup`. This will install the necessary husky scripts.
 
@@ -29,7 +29,7 @@ After installing the necessary tools, you can run the commands below to start de
 -   `yarn build`: Builds the library
 -   `yarn dev`: Build the library in watch mode
 -   `yarn lint`: Runs [alex](https://alexjs.com) as linter
--   `yarn test`: Runs [ava](https://github.com/avajs/ava) with the tests supplied in the `tests` directory
+-   `yarn test`: Runs [AVA](https://github.com/avajs/ava) with the tests supplied in the `tests` directory
 
 ## Development - Enforcing Code Standards
 
@@ -61,7 +61,7 @@ $ git checkout -b bugfix/bug-to-fix
 
 ## Development - Tests
 
-If you add new functionality, tests should be added. The project uses [ava](https://github.com/avajs/ava) as test runner. Tests can be found under the `tests` directory. Tests are written per file and should clearly indicate which function they test. All tests are written in TypeScript.
+If you add new functionality, tests should be added. The project uses [AVA](https://github.com/avajs/ava) as test runner. Tests can be found under the `tests` directory. Tests are written per file and should clearly indicate which function they test. All tests are written in TypeScript.
 
 ## Development - Github Actions
 

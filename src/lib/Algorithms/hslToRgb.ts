@@ -1,10 +1,12 @@
 /** @format */
 
-export function hslToRgb(hsl: number[]): number[] {
-    let [hue, saturation, lightness] = hsl;
-    hue = hue / 360;
-    saturation = saturation / 100;
-    lightness = lightness / 100;
+import { RGB } from '../../types';
+import { HSB } from '../../types/HSB';
+
+export function hslToRgb(hsl: HSB): RGB {
+    const hue = hsl[0] / 360;
+    const saturation = hsl[1] / 100;
+    const lightness = hsl[2] / 100;
 
     let c = (1 - Math.abs(2 * lightness - 1)) * saturation;
     let x = c * (1 - Math.abs(((hue * 6) % 2) - 1));
