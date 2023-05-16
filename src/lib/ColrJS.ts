@@ -42,12 +42,12 @@ export class ColrJS<T extends Record<PropertyKey, Processor>> {
     //@todo - add function documentation
     extractPalette(rgbPixelArray: RGB[]): Extractor<T> {
         return Object.fromEntries(
-            Object.values(this.processors).map(({ name, process }) => {
+            Object.values(this.processors).map((processor) => {
                 return [
-                    name,
+                    processor.name,
                     () => {
                         return new Promise((res) => {
-                            res(process(rgbPixelArray));
+                            res(processor.process(rgbPixelArray));
                         });
                     },
                 ];
