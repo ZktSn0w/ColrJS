@@ -6,6 +6,7 @@ import cleanup from 'rollup-plugin-cleanup';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import pkg from '../package.json' assert { type: 'json' };
+import terser from "@rollup/plugin-terser";
 
 const bundle = (config) => ({
     input: './src/index.ts',
