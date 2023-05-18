@@ -1,6 +1,6 @@
 <!-- @format -->
 
-# Vay.js
+# ColrJS
 
 [![Npm package version](https://badgen.net/npm/v/colrjs)](https://www.npmjs.com/package/colrjs)[![Npm package total downloads](https://badgen.net/npm/dt/colrjs)](https://npmjs.com/package/colrjs)[![Npm package license](https://badgen.net/npm/license/colrjs)](https://npmjs.com/package/colrjs)[![Github tag](https://badgen.net/github/tag/ZktSn0w/ColrJS)](https://github.com/ZktSn0w/ColrJS/tags)
 
