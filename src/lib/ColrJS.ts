@@ -2,8 +2,6 @@
 
 import { ColrInit, Extractor, RGB } from '../types';
 import { Processor } from './Processor';
-import { Complementary } from './Processors/Complementary';
-import { Monochromatic } from './Processors/Monochromatic';
 
 /**
  * @class
