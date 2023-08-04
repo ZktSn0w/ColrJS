@@ -6,3 +6,4 @@ export { ColrJS } from './ColrJS';
 export { Complementary } from './Processors/Complementary';
 export { Monochromatic } from './Processors/Monochromatic';
 export { Dominant } from './Processors/Dominant'
+export { Triad } from './Processors/Triad'
