@@ -74,4 +74,4 @@ If you would like to contribute, take a look at the [contribution guide](./contr
 
 ## License
 
-**Vay** is licensed under the MIT License
+**ColrJS** is licensed under the MIT License
